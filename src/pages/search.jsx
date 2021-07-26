@@ -1,5 +1,5 @@
 const Search = () => {
-    return "estamos en search"
+    return "Estamos en search"
 };
 
 export default Search;

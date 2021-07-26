@@ -1,5 +1,5 @@
 const Popular = () => {
-    return "estamos en popular"
+    return "Estamos en popular"
 };
 
 export default Popular;
