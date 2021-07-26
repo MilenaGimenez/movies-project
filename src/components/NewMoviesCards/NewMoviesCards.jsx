@@ -2,7 +2,8 @@ import { List, Avatar, Button, Card } from 'antd';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 
-//import './NewMovesCards.sass';
+import './NewMoviesCards.sass';
+
 const { Meta } = Card;
 
 const NewMovesCards = props => {
@@ -13,17 +14,23 @@ const NewMovesCards = props => {
     console.log(results.poster_path); 
 
     return (
-        <div>
+        <div className="cards-popular">
+            <h1>Ultimos lanzamientos</h1>
+            <div className="card-popular">
              {results.map(movie => (  
                 <Card 
-                    hoverable
-                    style={{ width: 240 }}                       
+                    
+                    style={{ width: 240, margin: 10}}                       
                     cover={<CardPopular movie={movie}/>}
                 >
-                    <Meta title={movie.title} 
-                    description={<i className="far fa-eye"></i>} />
+                    <Meta 
+                        title={movie.title} 
+                        description={<i className="far fa-eye"></i>}
+                        style={{textAlign: 'center'}}
+                          />
                 </Card>  
             ))}
+            </div>
         </div>
     );
 };
