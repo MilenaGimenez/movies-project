@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
-
-import './MenuTop.sass'
+//import { ReactComponent as Logo } from '../../assets/logo.svg';
+import "./MenuTop.sass";
 
 const MenuTop = () => {
     return (
         <div className="menu-top">
-            <div className="menu-top__logo">
-                Logo 🍿
+            <div className="menu-top_logo">
+                {/* <Logo /> */} Logo 🍿
             </div>
             <Menu
                 theme="dark"

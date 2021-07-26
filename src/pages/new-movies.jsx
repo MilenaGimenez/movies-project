@@ -1,5 +1,5 @@
 const NewMovies = () => {
-    return "estamos en newmovies"
+    return "Estamos en new movies"
 };
 
 export default NewMovies;
