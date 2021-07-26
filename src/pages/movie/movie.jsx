@@ -91,9 +91,11 @@ const MovieInfo = props => {
                 return(
                     <div>
                         <Button 
-                            icon="play-circle" 
+                            className="button"
                             onClick={openModal}>
+                            <i className="far fa-play-circle" />
                             Ver Trailer
+                            
                         </Button>
                         <ModalVideo 
                             videoKey={videoMovie.result.results[0].key}
