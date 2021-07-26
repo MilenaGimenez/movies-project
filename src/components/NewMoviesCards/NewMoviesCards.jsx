@@ -17,18 +17,9 @@ const NewMovesCards = props => {
         <div className="cards-popular">
             <h1>Ultimos lanzamientos</h1>
             <div className="card-popular">
-             {results.map(movie => (  
-                <Card 
-                    
-                    style={{ width: 240, margin: 10}}                       
-                    cover={<CardPopular movie={movie}/>}
-                >
-                    <Meta 
-                        title={movie.title} 
-                        description={<i className="far fa-eye"></i>}
-                        style={{textAlign: 'center'}}
-                          />
-                </Card>  
+            {results.map(movie => (  
+                <CardPopular movie={movie}/>
+                
             ))}
             </div>
         </div>
@@ -46,9 +37,19 @@ const CardPopular = props => {
     const posterPath = `https://image.tmdb.org/t/p/original${poster_path}`;
     console.log(posterPath);
     return (
-
-            <img src={posterPath} alt=""/>
-       
+        <Card                     
+            style={{ width: 240, margin: 10}}                       
+            cover={<img src={posterPath} alt=""/>}
+            >
+                <Meta 
+                    title={title} 
+                    style={{textAlign: 'center'}}
+                    description={
+                    <Link to={`/movie/${id}`}>
+                        <Button style={{ border: 0}}><i className="far fa-eye"></i></Button>
+                     </Link>}                    
+                />                 
+        </Card>    
     )
 };
 
