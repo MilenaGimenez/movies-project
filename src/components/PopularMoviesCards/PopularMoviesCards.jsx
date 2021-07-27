@@ -2,35 +2,34 @@ import { List, Avatar, Button, Card } from 'antd';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 
-import './NewMoviesCards.sass';
+import './PopularMoviesCards.sass';
 
 const { Meta } = Card;
 
-const NewMovesCards = (props) => {
-    const {title, newMovies} = props;
+const PopularMoviesCards = (props) => {
+    const {title, popularMovies} = props;
 
-    if(newMovies.loading || !newMovies.result){
+    if(popularMovies.loading || !popularMovies.result){
         return <Loading />
     }
   
-    //Destructuración de los resultados de newMovies.result, de las películas;
-    const { results } = newMovies.result;
+    //Destructuración de los resultados de popularMovies.result, de las películas;
+    const { results } = popularMovies.result;
     console.log(results.poster_path); 
 
     return (
-        <div className="cards-new-movie">
-            <h1>Ultimos lanzamientos</h1>
-            <div className="card-new-movie">
+        <div className="cards-popular">
+            <h1>Más populares</h1>
+            <div className="card-popular">
             {results.map(movie => (  
-                <CardNewMovie movie={movie}/>
-                
+                <CardPopular movie={movie}/>                
             ))}
             </div>
         </div>
     );
 };
 
-const CardNewMovie = props => {
+const CardPopular = props => {
     const { movie: 
         {
             poster_path,
@@ -57,4 +56,4 @@ const CardNewMovie = props => {
     )
 };
 
-export default NewMovesCards;
+export default PopularMoviesCards;
