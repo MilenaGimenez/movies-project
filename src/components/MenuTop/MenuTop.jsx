@@ -21,6 +21,7 @@ const MenuTop = () => {
                 </Menu.Item>
                 <Menu.Item key="2">
                     <Link to="/new-movies">New Movies</Link>
+                    {/* <Link to={{}}>New Movies</Link> */}
                 </Menu.Item>
                 <Menu.Item key="3">
                     <Link to="/popular">Popular</Link>

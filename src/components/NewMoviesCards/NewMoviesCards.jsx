@@ -6,8 +6,12 @@ import './NewMoviesCards.sass';
 
 const { Meta } = Card;
 
-const NewMovesCards = props => {
+const NewMovesCards = (props) => {
     const {title, popularMovies} = props;
+
+    if(popularMovies.loading || !popularMovies.result){
+        return <Loading />
+    }
   
     //Destructuración de los resultados de newMovies.result, de las películas;
     const { results } = popularMovies.result;
@@ -35,7 +39,7 @@ const CardPopular = props => {
         } 
     } = props;
     const posterPath = `https://image.tmdb.org/t/p/original${poster_path}`;
-    console.log(posterPath);
+    //console.log(posterPath);
     return (
         <Card                     
             style={{ width: 240, margin: 10}}                       
