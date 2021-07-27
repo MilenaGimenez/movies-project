@@ -7,14 +7,14 @@ import './NewMoviesCards.sass';
 const { Meta } = Card;
 
 const NewMovesCards = (props) => {
-    const {title, popularMovies} = props;
+    const {title, newMovies} = props;
 
-    if(popularMovies.loading || !popularMovies.result){
+    if(newMovies.loading || !newMovies.result){
         return <Loading />
     }
   
     //Destructuración de los resultados de newMovies.result, de las películas;
-    const { results } = popularMovies.result;
+    const { results } = newMovies.result;
     console.log(results.poster_path); 
 
     return (

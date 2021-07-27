@@ -15,20 +15,20 @@ const NewMovies = () => {
     // };
     
 
-    const popularMovies = useFetch(url);
-    console.log(popularMovies);
+    const newMovies = useFetch(url);
+    console.log(newMovies);
     
 
     // useEffect(() => {
     //     const url = `${URL_API}/movie/now_playing?api_key=${API_KEY}&language=en-ES&page=1`
-    //     const popularMovies = useFetch(url);
-    //     console.log(popularMovies);
+    //     const newMovies = useFetch(url);
+    //     console.log(newMovies);
     // }, [<NewMoviesCards />]);
     
     return (
         <div>
-            <NewMoviesCards popularMovies={popularMovies} />   
-            {/* <Paginador popularMovies={popularMovies}
+            <NewMoviesCards newMovies={newMovies} />   
+            {/* <Paginador newMovies={newMovies}
             url={url}/> */}
         </div>   
         
