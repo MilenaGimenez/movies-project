@@ -20,10 +20,11 @@ const MenuTop = () => {
                     <Link to="/">Home</Link>
                 </Menu.Item>
                 <Menu.Item key="2">
-                    <Link to="/new-movies">New Movies</Link>
+                    <Link to="/new-movies">Últimos lanzamientos</Link>
+                    {/* <Link to={{}}>New Movies</Link> */}
                 </Menu.Item>
                 <Menu.Item key="3">
-                    <Link to="/popular">Popular</Link>
+                    <Link to="/popular">Más populares</Link>
                 </Menu.Item>
                 <Menu.Item key="4">
                     <Link to="/search">Buscador</Link>
