@@ -6,6 +6,7 @@ import { URL_API, API_KEY } from '../../utils/constants';
 import './SearchPage.sass';
 import useFetch from '../../hooks/useFetch';
 
+const { Meta } = Card;
 
 const SearchPage = (props) => {
     //let leticia
@@ -91,22 +92,34 @@ const Prueba = (props) => {
             title
         } 
     } = props;
-
     const posterPath = `https://image.tmdb.org/t/p/original${poster_path}`;
+    
+    // const esONo = () => {
+    //     if(poster_path === null){
+    //         // const posterPath = "../../assets/no-disponible.jpg"        
+    //         const posterPath = `https://www.hola.com/imagenes/estar-bien/20190820147813/razas-perros-pequenos-parecen-grandes/0-711-550/razas-perro-pequenos-grandes-m.jpg`;
+        
+    //     } else {
+    //         const posterPath = `https://image.tmdb.org/t/p/original${poster_path}`;
+    //     }
+    //     return
+    // }
+    
 
     return(
         <Card                     
             style={{ width: 240, margin: 10}}                       
             cover={<img src={posterPath} alt=""/>}
+            // cover={<img src={esONo} alt=""/>}
             >
-                {/* <Meta 
+                <Meta 
                     title={title} 
                     style={{textAlign: 'center'}}
                     description={
                     <Link to={`/movie/${id}`}>
                         <Button style={{ border: 0}}><i className="far fa-eye"></i></Button>
                      </Link>}                    
-                />  */}               
+                />              
         </Card> 
     )
 }
