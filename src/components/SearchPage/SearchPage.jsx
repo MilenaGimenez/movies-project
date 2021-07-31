@@ -74,7 +74,7 @@ const SearchPage = (props) => {
     } */
 
     return (
-        <div>
+        <div className="search-page-prueba">
            {results.map(movie => (  
                     <Prueba movie={movie}/>                    
                 ))}

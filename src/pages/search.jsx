@@ -4,19 +4,9 @@ import useFetch from '../hooks/useFetch';
 import { URL_API, API_KEY } from '../utils/constants';
 import { Input, List, Avatar, Button, Card, } from 'antd';
 
+import './search.sass'
 
 const Search = () => {
-    // const url = `${URL_API}/movie/now_playing?api_key=${API_KEY}&language=en-ES&page=1`
-    //const [busqueda, setBusqueda] = useState('undefined');
-
-    //const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${busqueda}`
-
-    //const allMovies = useFetch(url);
-    
-   
-    // return(
-    //     <SearchPage allMovies={allMovies} busqueda={busqueda} setBusqueda={setBusqueda} url={url}/>
-    // )
     const [inputUsuario, setImputUsuario] = useState('')
     const [url, setUrl] = useState([]);
 
@@ -43,10 +33,7 @@ const Search = () => {
             <h1>Buscador</h1>
             <Input placeholder="Escribe el nombre de la película que quieras buscar" onChange={onChange}/>
             <div className="card-new-movie">   
-                <SearchPage url={url}/>         
-                {/* {results.map(movie => (  
-                    <SearchPage movie={movie}/>                    
-                ))} */}
+                <SearchPage url={url}/>
             </div>
         </div>
     )
