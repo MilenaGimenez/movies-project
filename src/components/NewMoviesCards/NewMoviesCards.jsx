@@ -7,11 +7,7 @@ import './NewMoviesCards.sass';
 const { Meta } = Card;
 
 const NewMovesCards = (props) => {
-    // const {title, newMovies} = props;
-
-    // if(newMovies.loading || !newMovies.result){
-    //     return <Loading />
-    // }
+    // const {title, newMovies} = props;    
   
     //Destructuración de los resultados de newMovies.result, de las películas;
     const { movieList } = props;
@@ -19,9 +15,13 @@ const NewMovesCards = (props) => {
     console.log(results);
     // console.log(results.poster_path); 
 
+    // if(movieList.loading || !movieList.result){
+    //      return <Loading />
+    // }
+
     return (
         <div className="cards-new-movie">
-            <h1>Ultimos lanzamientos</h1>
+            
             <div className="card-new-movie">
             {results.map(movie => (  
                 <CardNewMovie movie={movie}/>

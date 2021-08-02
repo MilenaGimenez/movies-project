@@ -5,13 +5,6 @@ import NewMoviesCards from '../components/NewMoviesCards/';
 import Paginador from '../components/Paginador';
 
 const NewMovies = () => {      
-    const url = `${URL_API}/movie/now_playing?api_key=${API_KEY}&language=en-ES&page=1`
-
-    const namePage = 'now_playing';
-
-    const newMovies = useFetch(url);
-    console.log(newMovies); 
-
     const [movieList, setMovieList] = useState([])
     const [page, setPage] = useState(1) 
 
@@ -34,6 +27,7 @@ const NewMovies = () => {
         
     return (
         <div>
+            <h1>Ultimos lanzamientos</h1>
             <NewMoviesCards movieList={movieList} />   
             <Paginador 
                 currentPage={movieList.page}
