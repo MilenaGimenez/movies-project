@@ -19,10 +19,10 @@ const Home = () => {
         <div>
             <SliderMovies newMovies={newMovies}/>
             <Row>
-                <Col span={12}>
+                <Col xs={24} sm={24} md={12} lg={12}>
                     <MovieList title="Peliculas populares" popularMovies={popularMovies}/>
                 </Col>
-                <Col span={12}>
+                <Col xs={24} sm={24} md={12} lg={12}>
                 <MovieList title="Top Mejores Películas" popularMovies={topRankedMovies}/>
                 </Col>
             </Row>

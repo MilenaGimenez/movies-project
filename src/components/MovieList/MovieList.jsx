@@ -1,4 +1,4 @@
-import { List, Avatar, Button } from 'antd';
+import { List, Avatar, Button, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 import {RightOutlined} from '@ant-design/icons';
@@ -46,7 +46,6 @@ const RenderMovie = props => {
                     shape="circle"
                     icon={<RightOutlined />}
                 >
-
                 </Button>
             </Link>
         </List.Item>
