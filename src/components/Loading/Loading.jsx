@@ -1,10 +1,10 @@
-import { Spin } from 'antd';
 import './Loading.sass'
+import { LoadingOutlined } from '@ant-design/icons';
 
 const Loading = () => {
     return (
         <div className="loading">
-            <Spin size="large"/>
+            <LoadingOutlined style={{ fontSize: 24 }} spin />
             <h5>Cargando...</h5>
         </div>
     );
