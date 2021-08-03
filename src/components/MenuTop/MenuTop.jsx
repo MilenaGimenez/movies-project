@@ -14,7 +14,7 @@ const MenuTop = () => {
                 theme="dark"
                 mode="horizontal"
                 defaultSelectedKeys={["1"]}
-                style={{lineHeight: "78px"}}
+                style={{lineHeight: "68px"}}
             >
                 <Menu.Item key="1">
                     <Link to="/">Home</Link>
