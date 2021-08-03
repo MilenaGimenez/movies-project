@@ -41,20 +41,23 @@ const Search = () => {
         <div className="search-page">
             <h1>Buscador</h1>
             <Input placeholder="Escribe el nombre de la película que quieras buscar" onChange={onChangeInput}/>
-            <div className="card-new-movie">   
-                <SearchPage url={url}/>
+            <div className="prueba">
+                <div className="card-new-movie">   
+                    <SearchPage url={url}/>
+                </div>
+                <Paginador 
+                    currentPage={url.page}
+                    //defaultCurrent={1}  
+                    onChange={onChange}
+                    total={url.total_results}
+                    //showTotal={total => `Total ${total} items`}  
+                    pageSize={20}
+                    //showSizeChanger={true}
+                />
             </div>
-            <Paginador 
-                currentPage={url.page}
-                //defaultCurrent={1}  
-                onChange={onChange}
-                total={url.total_results}
-                //showTotal={total => `Total ${total} items`}  
-                pageSize={20}
-                //showSizeChanger={true}
-            />
+            
+            
         </div>
     )
 };
-
 export default Search;
