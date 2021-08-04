@@ -67,14 +67,14 @@ const SearchPage = (props) => {
     //if(!results) return <Loading />
     if(!results) {
         return (
-            <>
+            <div className="logo-y-texto">
                 <div>
                     <div className="logo"></div>              
                 </div>
                 <div>
                     <h2>Escribe el nombre de una película</h2>                
                 </div>
-            </>
+            </div>
             
         )
     }
