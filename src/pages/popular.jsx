@@ -5,6 +5,8 @@ import MoviesCards from '../components/MoviesCards';
 import Paginador from '../components/Paginador';
 import Loading from '../components/Loading';
 
+import './popular.sass'
+
 const Popular = () => {
     const [movieList, setMovieList] = useState([])
     const [page, setPage] = useState(1) 
@@ -27,23 +29,26 @@ const Popular = () => {
     }
         
     return (
-        <div>
+        <div className="new-movies">
             <h1 style={{
                     textAlign: 'center',
                     margin: '20px'
                 }}>Más populares</h1>
-            {movieList.results ? 
-                <MoviesCards movieList={movieList} /> 
-             : <Loading />} 
-            <Paginador 
-                currentPage={movieList.page}
-                //defaultCurrent={1}  
-                onChange={onChange}
-                total={movieList.total_results}
-                //showTotal={total => `Total ${total} items`}  
-                pageSize={20}
-                //showSizeChanger={true}
-            />
+            <div className="prueba">
+                {movieList.results ? 
+                    <MoviesCards movieList={movieList} /> 
+                    : <Loading />}
+                                
+                <Paginador 
+                    currentPage={movieList.page}
+                    //defaultCurrent={1}  
+                    onChange={onChange}
+                    total={movieList.total_results}
+                    //showTotal={total => `Total ${total} items`}  
+                    pageSize={20}
+                    //showSizeChanger={true}
+                />
+            </div>
         </div>           
     )
 };
