@@ -1,6 +1,5 @@
 import {Pagination} from 'antd';
-
-export default (props) => { 
+const Paginador = (props) => { 
     
     const {currentPage, onChange, total} = props;
     
@@ -15,3 +14,5 @@ export default (props) => {
         </div>
     );
 };
+
+export default Paginador;

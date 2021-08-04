@@ -18,22 +18,13 @@ const Search = () => {
             );
             const movies = await response.json()
             setUrl(movies)
-            console.log(movies);
-            console.log(movies.results);
-
         })();
     }, [inputUsuario, page]);
 
-    const onChangeInput = (e) => {
-        setImputUsuario(e.target.value)
-        console.log(setImputUsuario);
-    };
+    const onChangeInput = (e) => setImputUsuario(e.target.value)
 
-    const onChange = e => {
-        setPage(e)
-        console.log(e);
-        console.log('hola');
-    };
+
+    const onChange = e => setPage(e)
 
     return(
         <>

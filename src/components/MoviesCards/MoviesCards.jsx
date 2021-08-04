@@ -8,15 +8,13 @@ const { Meta } = Card;
 const MoviesCards = (props) => {
     const { movieList } = props;
     const {results} = movieList;
-    console.log(results);
-    console.log(results.loading);
-    
+        
     return (
         <div className="cards-new-movie">
             
             <div className="card-new-movie">
             {results.map(movie => (  
-                <CardNewMovie movie={movie}/>
+                <CardNewMovie movie={movie} key={movie.id}/>
                 
             ))}
             </div>

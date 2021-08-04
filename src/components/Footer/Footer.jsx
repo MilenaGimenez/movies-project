@@ -6,9 +6,8 @@ const Footer = () => {
     return (
         <Footer className="footer">
             <p>🎬 Movie Finder por
-                <a href="https://github.com/MilenaGimenez/" target="_blank"> Milena Gimenez</a>
-            </p>
-            
+                <a href="https://github.com/MilenaGimenez/" target="blank"> Milena Gimenez</a>
+            </p>            
         </Footer>
     );
 };

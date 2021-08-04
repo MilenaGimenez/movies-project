@@ -17,15 +17,10 @@ const NewMovies = () => {
             )
             const movies = await response.json()
             setMovieList(movies)
-            console.log(movies);
         })()
-    },[page])
+    },[page]);
 
-    const onChange = e => {
-        setPage(e)
-        console.log(e);
-        console.log('hola');
-    };
+    const onChange = e => setPage(e)
         
     return (
         <>

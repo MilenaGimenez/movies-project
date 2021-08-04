@@ -7,7 +7,6 @@ const { Meta } = Card;
 
 const SearchPage = (props) => {   
     const {url} = props
-    console.log(url);
     const {results} = url  
 
     if(!results) {
@@ -26,7 +25,7 @@ const SearchPage = (props) => {
     return (
         <div className="search-page-results">
            {results.map(movie => (  
-                    <Prueba movie={movie}/>                    
+                    <Prueba movie={movie} key={movie.id}/>                    
                 ))}
         </div>        
     )
