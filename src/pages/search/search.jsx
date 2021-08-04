@@ -1,9 +1,9 @@
-import SearchPage from '../components/SearchPage';
+import SearchPage from '../../components/SearchPage';
 import {useState, useEffect} from 'react'
-import useFetch from '../hooks/useFetch';
-import { URL_API, API_KEY } from '../utils/constants';
+import useFetch from '../../hooks/useFetch';
+import { URL_API, API_KEY } from '../../utils/constants';
 import { Input, List, Avatar, Button, Card, } from 'antd';
-import Paginador from '../components/Paginador';
+import Paginador from '../../components/Paginador';
 
 import './search.sass'
 

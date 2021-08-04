@@ -1,8 +1,9 @@
 import {useEffect, useState} from 'react';
 import useFetch from '../hooks/useFetch';
 import { URL_API, API_KEY } from '../utils/constants';
-import NewMoviesCards from '../components/NewMoviesCards/';
+import MoviesCards from '../components/MoviesCards';
 import Paginador from '../components/Paginador';
+import Loading from '../components/Loading';
 
 const Popular = () => {
     const [movieList, setMovieList] = useState([])
@@ -27,8 +28,13 @@ const Popular = () => {
         
     return (
         <div>
-            <h1>Más populares</h1>
-            <NewMoviesCards movieList={movieList} />   
+            <h1 style={{
+                    textAlign: 'center',
+                    margin: '20px'
+                }}>Más populares</h1>
+            {movieList.results ? 
+                <MoviesCards movieList={movieList} /> 
+             : <Loading />} 
             <Paginador 
                 currentPage={movieList.page}
                 //defaultCurrent={1}  

@@ -8,7 +8,7 @@ import Error404 from './pages/error404';
 import Movie from './pages/movie/';
 import NewMovies from './pages/new-movies';
 import Popular from './pages/popular';
-import Search from './pages/search';
+import Search from './pages/search/';
 
 //Componentes
 import MenuTop from './components/MenuTop';
