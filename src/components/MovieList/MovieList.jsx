@@ -1,4 +1,4 @@
-import { List, Avatar, Button, Col, Row } from 'antd';
+import { List, Avatar, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 import {RightOutlined} from '@ant-design/icons';

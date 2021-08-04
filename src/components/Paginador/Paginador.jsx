@@ -1,9 +1,5 @@
 import {Pagination} from 'antd';
-import {URL_API, API_KEY} from '../../utils/constants'
-import useFetch from '../../hooks/useFetch';
-import {useState, useEffect} from 'react';
-
-export default (props) => { 
+const Paginador = (props) => { 
     
     const {currentPage, onChange, total} = props;
     
@@ -18,3 +14,5 @@ export default (props) => {
         </div>
     );
 };
+
+export default Paginador;

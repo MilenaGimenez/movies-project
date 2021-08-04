@@ -5,13 +5,11 @@ import Loading from '../Loading';
 import './SliderMovies.sass'
 
 const SliderMovies = props => {
-    //Destructuración de los props de newMovies
+
     const { newMovies } = props;
     if(newMovies.loading || !newMovies.result){
         return <Loading />
     }
-
-    //Destructuración de los resultados de newMovies.result, de las películas;
     const { results } = newMovies.result;
 
     return (
