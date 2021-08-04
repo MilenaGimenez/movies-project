@@ -11,12 +11,9 @@ export default (props) => {
         <div>
             <Pagination 
                 currentPage={currentPage}
-                //defaultCurrent={1}  
                 onChange={onChange}
-                total={total}
-                //showTotal={total => `Total ${total} items`}  
+                total={total} 
                 pageSize={20}
-                //showSizeChanger={true}
                 />
         </div>
     );

@@ -1,9 +1,9 @@
-import SearchPage from '../components/SearchPage';
+import SearchPage from '../../components/SearchPage';
 import {useState, useEffect} from 'react'
-import useFetch from '../hooks/useFetch';
-import { URL_API, API_KEY } from '../utils/constants';
+import useFetch from '../../hooks/useFetch';
+import { URL_API, API_KEY } from '../../utils/constants';
 import { Input, List, Avatar, Button, Card, } from 'antd';
-import Paginador from '../components/Paginador';
+import Paginador from '../../components/Paginador';
 
 import './search.sass'
 
@@ -41,20 +41,23 @@ const Search = () => {
         <div className="search-page">
             <h1>Buscador</h1>
             <Input placeholder="Escribe el nombre de la película que quieras buscar" onChange={onChangeInput}/>
-            <div className="card-new-movie">   
-                <SearchPage url={url}/>
+            <div className="prueba">
+                <div className="card-new-movie">   
+                    <SearchPage url={url}/>
+                </div>
+                <Paginador 
+                    currentPage={url.page}
+                    //defaultCurrent={1}  
+                    onChange={onChange}
+                    total={url.total_results}
+                    //showTotal={total => `Total ${total} items`}  
+                    pageSize={20}
+                    //showSizeChanger={true}
+                />
             </div>
-            <Paginador 
-                currentPage={url.page}
-                //defaultCurrent={1}  
-                onChange={onChange}
-                total={url.total_results}
-                //showTotal={total => `Total ${total} items`}  
-                pageSize={20}
-                //showSizeChanger={true}
-            />
+            
+            
         </div>
     )
 };
-
 export default Search;

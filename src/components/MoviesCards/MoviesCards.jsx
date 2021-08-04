@@ -1,26 +1,28 @@
 import { List, Avatar, Button, Card } from 'antd';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
-import {useState, useEffect} from './react'
 
-import './NewMoviesCards.sass';
+import './MoviesCards.sass';
 
 const { Meta } = Card;
 
-const NewMovesCards = (props) => {
-    const {title, newMovies} = props;
-
-    if(newMovies.loading || !newMovies.result){
-        return <Loading />
-    }
+const MoviesCards = (props) => {
+    // const {title, newMovies} = props;    
   
     //Destructuración de los resultados de newMovies.result, de las películas;
-    const { results } = newMovies.result;
-    console.log(results.poster_path); 
+    const { movieList } = props;
+    const {results} = movieList;
+    console.log(results);
+    console.log(results.loading);
+    // console.log(results.poster_path); 
+
+    // if(movieList.loading || !movieList.result){
+    //      return <Loading />
+    // }
 
     return (
         <div className="cards-new-movie">
-            <h1>Ultimos lanzamientos</h1>
+            
             <div className="card-new-movie">
             {results.map(movie => (  
                 <CardNewMovie movie={movie}/>
@@ -51,11 +53,11 @@ const CardNewMovie = props => {
                     style={{textAlign: 'center'}}
                     description={
                     <Link to={`/movie/${id}`}>
-                        <Button style={{ border: 0}}><i className="far fa-eye"></i></Button>
+                        <Button className="btn-eye"><i className="far fa-eye"></i></Button>
                      </Link>}                    
                 />                 
         </Card>    
     )
 };
 
-export default NewMovesCards;
+export default MoviesCards;

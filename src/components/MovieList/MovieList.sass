@@ -1,15 +1,19 @@
+$primary-color: #211b52
+$secondary-color: #47445c
+$tertiary-color: #6a6685
+
 .movie-list
     width: 80%
     margin: 0 auto
     margin-top: 50px
-    border-color: #072744
 
 .ant-list-header
-    background-color: #001529
+    background-color: $primary-color
     text-align: center
     h2
         margin: 0
         color: white
+        font-size: 1.1rem
 
 .ant-list-items
     height: 65vh
@@ -20,3 +24,10 @@
         align-items: center
     .ant-list-item-meta-title
         margin: 0
+
+.ant-btn
+    background-color: $secondary-color
+    border: none
+.ant-btn:hover
+    background-color: $tertiary-color
+    border: none

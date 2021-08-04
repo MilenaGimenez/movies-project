@@ -5,7 +5,7 @@ const Footer = () => {
     const {Footer} = Layout;
     return (
         <Footer className="footer">
-            <p>Creado por
+            <p>🎬 Movie Finder por
                 <a href="https://github.com/MilenaGimenez/" target="_blank"> Milena Gimenez</a>
             </p>
             

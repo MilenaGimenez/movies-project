@@ -1,8 +1,11 @@
 import {useEffect, useState} from 'react';
 import useFetch from '../hooks/useFetch';
 import { URL_API, API_KEY } from '../utils/constants';
-import NewMoviesCards from '../components/NewMoviesCards/';
+import MoviesCards from '../components/MoviesCards';
 import Paginador from '../components/Paginador';
+import Loading from '../components/Loading';
+
+import './new-movies.sass'
 
 const NewMovies = () => {      
     const [movieList, setMovieList] = useState([])
@@ -26,18 +29,27 @@ const NewMovies = () => {
     }
         
     return (
-        <div>
-            <h1>Ultimos lanzamientos</h1>
-            <NewMoviesCards movieList={movieList} />   
-            <Paginador 
-                currentPage={movieList.page}
-                //defaultCurrent={1}  
-                onChange={onChange}
-                total={movieList.total_results}
-                //showTotal={total => `Total ${total} items`}  
-                pageSize={20}
-                //showSizeChanger={true}
-            />
+        <div className="new-movies">
+            <h1 style={{
+                    textAlign: 'center',
+                    margin: '20px'
+                }}
+            >Ultimos lanzamientos</h1>
+            <div className="prueba">
+                {movieList.results ? 
+                    <MoviesCards movieList={movieList} /> 
+                    : <Loading />}
+                                
+                <Paginador 
+                    currentPage={movieList.page}
+                    //defaultCurrent={1}  
+                    onChange={onChange}
+                    total={movieList.total_results}
+                    //showTotal={total => `Total ${total} items`}  
+                    pageSize={20}
+                    //showSizeChanger={true}
+                />
+            </div>            
         </div>           
     )
 };

@@ -64,15 +64,20 @@ const SearchPage = (props) => {
     const {url} = props
     console.log(url);
     const {results} = url  
-    if(!results) return <Loading />
-    /* if(!results) {
+    //if(!results) return <Loading />
+    if(!results) {
         return (
-            <div>
-                estoy cargando o no tengo nada que te pasa
-                <Loading />
-            </div>
+            <>
+                <div>
+                    <div className="logo"></div>              
+                </div>
+                <div>
+                    <h2>Escribe el nombre de una película</h2>                
+                </div>
+            </>
+            
         )
-    } */
+    }
 
     return (
         <div className="search-page-prueba">
@@ -117,7 +122,7 @@ const Prueba = (props) => {
                     style={{textAlign: 'center'}}
                     description={
                     <Link to={`/movie/${id}`}>
-                        <Button style={{ border: 0}}><i className="far fa-eye"></i></Button>
+                        <Button className="btn-eye"><i className="far fa-eye"></i></Button>
                      </Link>}                    
                 />              
         </Card> 
