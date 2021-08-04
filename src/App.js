@@ -1,6 +1,6 @@
 //Librerias y funcionalidades
 import { Layout } from 'antd';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 //Pages
 import Home from './pages/home';
@@ -19,7 +19,7 @@ const App = () => {
   const {Header, Content} = Layout;
   return (
     <Layout>
-      <Router>
+      <HashRouter basename="/">
         <Header style={{zIndex: 1}}>
           <MenuTop />
         </Header>
@@ -33,7 +33,7 @@ const App = () => {
             <Route path="*" component={Error404} />
           </Switch>
         </Content>    
-      </Router>
+      </HashRouter>
     </Layout>    
   );
 }
