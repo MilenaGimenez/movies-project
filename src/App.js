@@ -2,18 +2,16 @@
 import { Layout } from 'antd';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
-//Pages
+//Paginas
 import Home from './pages/home';
 import Error404 from './pages/error404';
 import Movie from './pages/movie/';
 import NewMovies from './pages/new-movies';
-import Popular from './pages/popular';
-//import Popular from './pages/popular';
 import Search from './pages/search/';
+import Popular from './pages/popular';
 
 //Componentes
 import MenuTop from './components/MenuTop';
-
 
 const App = () => {
   const {Header, Content} = Layout;

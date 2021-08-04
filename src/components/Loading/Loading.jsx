@@ -1,5 +1,5 @@
-import './Loading.sass'
 import { LoadingOutlined } from '@ant-design/icons';
+import './Loading.sass'
 
 const Loading = () => {
     return (

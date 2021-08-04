@@ -10,8 +10,7 @@ import ModalVideo from '../../components/ModalVideo';
 
 import './movie.sass';
 
-const Movie = () => {
-    //Trae los parametros que hay en la url. En este caso el id, ya que es el único, esta en el app.js (movie/:id)
+const Movie = () => {    
     const {id} = useParams();
 
     const url = `${URL_API}/movie/${id}?api_key=${API_KEY}&language=es-ES`;
@@ -27,7 +26,6 @@ const RenderMovie = props => {
     const {
         movieInfo: {
             result: {
-                title,
                 backdrop_path,
                 poster_path
             }
@@ -80,8 +78,7 @@ const MovieInfo = props => {
     const url = `${URL_API}/movie/${id}/videos?api_key=${API_KEY}&language=es-ES`;
     const videoMovie = useFetch(url);
     console.log(videoMovie);
-
-    //esto se puede hacer con una sola funcion pero es mas complicado porque lo estamos trabajando por modales separados
+    
     const openModal = () => setIsVisibleModal(true);
     const closeModal = () => setIsVisibleModal(false);
 
@@ -105,9 +102,9 @@ const MovieInfo = props => {
                         /> 
                     </div>
                 )
-            }
-        }
-    }
+            };
+        };
+    };
 
     return (
         <div>

@@ -1,21 +1,19 @@
 import {useEffect, useState} from 'react';
-import useFetch from '../hooks/useFetch';
-import { URL_API, API_KEY } from '../utils/constants';
-import MoviesCards from '../components/MoviesCards';
-import Paginador from '../components/Paginador';
-import Loading from '../components/Loading';
-import Footer from '../components/Footer';
+import { URL_API, API_KEY } from '../../utils/constants';
+import MoviesCards from '../../components/MoviesCards';
+import Paginador from '../../components/Paginador';
+import Loading from '../../components/Loading';
+import Footer from '../../components/Footer';
+import './new-movies.sass'
 
-import './popular.sass'
-
-const Popular = () => {
+const NewMovies = () => {      
     const [movieList, setMovieList] = useState([])
     const [page, setPage] = useState(1) 
 
     useEffect(()=>{
         (async() => {
             const response = await fetch(
-                `${URL_API}/movie/popular?api_key=${API_KEY}&language=en-ES&page=${page}`
+                `${URL_API}/movie/now_playing?api_key=${API_KEY}&language=en-ES&page=${page}`
             )
             const movies = await response.json()
             setMovieList(movies)
@@ -27,7 +25,7 @@ const Popular = () => {
         setPage(e)
         console.log(e);
         console.log('hola');
-    }
+    };
         
     return (
         <>
@@ -35,26 +33,24 @@ const Popular = () => {
                 <h1 style={{
                         textAlign: 'center',
                         margin: '20px'
-                    }}>Más populares</h1>
-                <div className="prueba">
+                    }}
+                >Ultimos lanzamientos</h1>
+                <div className="box-results">
                     {movieList.results ? 
                         <MoviesCards movieList={movieList} /> 
                         : <Loading />}
                                     
                     <Paginador 
                         currentPage={movieList.page}
-                        //defaultCurrent={1}  
                         onChange={onChange}
                         total={movieList.total_results}
-                        //showTotal={total => `Total ${total} items`}  
                         pageSize={20}
-                        //showSizeChanger={true}
                     />
-                </div>
-            </div>   
-            <Footer /> 
-        </>       
+                </div>            
+            </div>  
+            <Footer />
+        </>         
     )
 };
 
-export default Popular;
+export default NewMovies;

@@ -1,25 +1,16 @@
-import { List, Avatar, Button, Card } from 'antd';
+import { Button, Card } from 'antd';
 import { Link } from 'react-router-dom';
-import Loading from '../Loading';
 
 import './MoviesCards.sass';
 
 const { Meta } = Card;
 
 const MoviesCards = (props) => {
-    // const {title, newMovies} = props;    
-  
-    //Destructuración de los resultados de newMovies.result, de las películas;
     const { movieList } = props;
     const {results} = movieList;
     console.log(results);
     console.log(results.loading);
-    // console.log(results.poster_path); 
-
-    // if(movieList.loading || !movieList.result){
-    //      return <Loading />
-    // }
-
+    
     return (
         <div className="cards-new-movie">
             
@@ -42,7 +33,7 @@ const CardNewMovie = props => {
         } 
     } = props;
     const posterPath = `https://image.tmdb.org/t/p/original${poster_path}`;
-    //console.log(posterPath);
+    
     return (
         <Card                     
             style={{ width: 240, margin: 10}}                       
