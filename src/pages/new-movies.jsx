@@ -4,7 +4,7 @@ import { URL_API, API_KEY } from '../utils/constants';
 import MoviesCards from '../components/MoviesCards';
 import Paginador from '../components/Paginador';
 import Loading from '../components/Loading';
-
+import Footer from '../components/Footer';
 import './new-movies.sass'
 
 const NewMovies = () => {      
@@ -29,28 +29,31 @@ const NewMovies = () => {
     }
         
     return (
-        <div className="new-movies">
-            <h1 style={{
-                    textAlign: 'center',
-                    margin: '20px'
-                }}
-            >Ultimos lanzamientos</h1>
-            <div className="prueba">
-                {movieList.results ? 
-                    <MoviesCards movieList={movieList} /> 
-                    : <Loading />}
-                                
-                <Paginador 
-                    currentPage={movieList.page}
-                    //defaultCurrent={1}  
-                    onChange={onChange}
-                    total={movieList.total_results}
-                    //showTotal={total => `Total ${total} items`}  
-                    pageSize={20}
-                    //showSizeChanger={true}
-                />
-            </div>            
-        </div>           
+        <>
+            <div className="new-movies">
+                <h1 style={{
+                        textAlign: 'center',
+                        margin: '20px'
+                    }}
+                >Ultimos lanzamientos</h1>
+                <div className="prueba">
+                    {movieList.results ? 
+                        <MoviesCards movieList={movieList} /> 
+                        : <Loading />}
+                                    
+                    <Paginador 
+                        currentPage={movieList.page}
+                        //defaultCurrent={1}  
+                        onChange={onChange}
+                        total={movieList.total_results}
+                        //showTotal={total => `Total ${total} items`}  
+                        pageSize={20}
+                        //showSizeChanger={true}
+                    />
+                </div>            
+            </div>  
+            <Footer />
+        </>         
     )
 };
 

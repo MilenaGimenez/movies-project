@@ -4,6 +4,7 @@ import { URL_API, API_KEY } from '../utils/constants';
 import MoviesCards from '../components/MoviesCards';
 import Paginador from '../components/Paginador';
 import Loading from '../components/Loading';
+import Footer from '../components/Footer';
 
 import './popular.sass'
 
@@ -29,27 +30,30 @@ const Popular = () => {
     }
         
     return (
-        <div className="new-movies">
-            <h1 style={{
-                    textAlign: 'center',
-                    margin: '20px'
-                }}>Más populares</h1>
-            <div className="prueba">
-                {movieList.results ? 
-                    <MoviesCards movieList={movieList} /> 
-                    : <Loading />}
-                                
-                <Paginador 
-                    currentPage={movieList.page}
-                    //defaultCurrent={1}  
-                    onChange={onChange}
-                    total={movieList.total_results}
-                    //showTotal={total => `Total ${total} items`}  
-                    pageSize={20}
-                    //showSizeChanger={true}
-                />
-            </div>
-        </div>           
+        <>
+            <div className="new-movies">
+                <h1 style={{
+                        textAlign: 'center',
+                        margin: '20px'
+                    }}>Más populares</h1>
+                <div className="prueba">
+                    {movieList.results ? 
+                        <MoviesCards movieList={movieList} /> 
+                        : <Loading />}
+                                    
+                    <Paginador 
+                        currentPage={movieList.page}
+                        //defaultCurrent={1}  
+                        onChange={onChange}
+                        total={movieList.total_results}
+                        //showTotal={total => `Total ${total} items`}  
+                        pageSize={20}
+                        //showSizeChanger={true}
+                    />
+                </div>
+            </div>   
+            <Footer /> 
+        </>       
     )
 };
 

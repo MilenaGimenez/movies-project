@@ -4,6 +4,7 @@ import useFetch from '../../hooks/useFetch';
 import { URL_API, API_KEY } from '../../utils/constants';
 import { Input, List, Avatar, Button, Card, } from 'antd';
 import Paginador from '../../components/Paginador';
+import Footer from '../../components/Footer';
 
 import './search.sass'
 
@@ -38,26 +39,27 @@ const Search = () => {
     }
 
     return(
-        <div className="search-page">
-            <h1>Buscador</h1>
-            <Input placeholder="Escribe el nombre de la película que quieras buscar" onChange={onChangeInput}/>
-            <div className="prueba">
-                <div className="card-new-movie">   
-                    <SearchPage url={url}/>
-                </div>
-                <Paginador 
-                    currentPage={url.page}
-                    //defaultCurrent={1}  
-                    onChange={onChange}
-                    total={url.total_results}
-                    //showTotal={total => `Total ${total} items`}  
-                    pageSize={20}
-                    //showSizeChanger={true}
-                />
+        <>
+            <div className="search-page">
+                <h1>Buscador</h1>
+                <Input placeholder="Escribe el nombre de la película que quieras buscar" onChange={onChangeInput}/>
+                <div className="prueba">
+                    <div className="card-new-movie">   
+                        <SearchPage url={url}/>
+                    </div>
+                    <Paginador 
+                        currentPage={url.page}
+                        //defaultCurrent={1}  
+                        onChange={onChange}
+                        total={url.total_results}
+                        //showTotal={total => `Total ${total} items`}  
+                        pageSize={20}
+                        //showSizeChanger={true}
+                    />
+                </div>                     
             </div>
-            
-            
-        </div>
+            <Footer />  
+        </>
     )
 };
 export default Search;
